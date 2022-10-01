@@ -1,0 +1,41 @@
+spring:
+  jpa:
+    hibernate:
+      format_sql: true
+      ddl-auto: create-drop
+    show-sql:  true
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/jababira"
+    username: jabbar
+    password: aboilsharbat
+    initialization-mode: always
+  application:
+    name: jababira
+  servlet:
+    multipart:
+      enabled: true
+      location: /tmp
+server:
+  port: 9001
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+graphql:
+  servlet:
+    actuator-metrics: true
+    corsEnabled: true
+  playground:
+    cdn:
+      version: latest
+graphiql:
+  enabled: true
+  cdn:
+    enabled: true
+    version: 0.17.5
+logging:
+  level:
+    root: ERROR
+    org.spingframework.web: ERROR
+    com.hawazin.jababira: DEBUG

@@ -1,0 +1,60 @@
+
+
+type Mutation {
+    CreatePlayer(player:NewPlayer!): Player!
+    CreateMatch(match:NewMatch!): Match!
+    UpdatePlayer(player:ExistingPlayer!): Player!
+}
+
+input NewMatch {
+    venueId:String!
+    date:String!
+    time:String!
+    type:MatchType!
+    squads:[NewSquad!]!
+    leagueId:String
+}
+input NewSquad {
+    color:Color
+    dominantNationality:Nationality
+    captainId:String!
+    isJababiraSquad:Boolean
+    players:[NewSquadPlayer!]
+    score:Int
+}
+input NewSquadPlayer {
+    playerId:String!
+    position:Position
+    performanceRating:Float!
+}
+
+input ExistingPlayer {
+    id:String!
+    firstName: String
+    lastName:String
+    dob:String
+    picture:String
+    attributes:PlayerAttributesInput
+}
+
+input NewPlayer {
+    firstName: String!
+    lastName:String!
+    dob:String
+    picture:String
+    attributes:PlayerAttributesInput!
+}
+
+input PlayerAttributesInput {
+    position:Position!
+    speed:Int!
+    dribble:Int!
+    pass:Int!
+    gk:Int
+    team:Int!
+    stamina:Int!
+    shoot:Int!
+    defense:Int!
+    head:Int!
+    iq:Int!
+}

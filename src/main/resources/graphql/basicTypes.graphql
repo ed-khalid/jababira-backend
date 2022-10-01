@@ -1,0 +1,81 @@
+
+type Player {
+    id:String!
+    firstName:String!
+    lastName:String!
+    picture:String
+    dob:String
+    nationality:Nationality
+    height:Float
+    weight:Float
+    attributes:PlayerAttributes!
+}
+type PlayerAttributes {
+    position:Position!
+    speed:Int!
+    gk:Int
+    dribble:Int!
+    pass:Int!
+    shoot:Int!
+    team:Int!
+    defense:Int!
+    stamina:Int!
+    head:Int!
+    iq:Int!
+}
+
+enum Position {
+    GK, DEF, MID, FW
+}
+
+type Match {
+    id:String!
+    location:Venue!
+    date:String!
+    time:String!
+    type:MatchType!
+    squads:[Squad!]!
+    league:League
+}
+
+type Squad {
+    id:String!
+    name:String!
+    color:Color
+    dominantNationality:Nationality
+    captain:Player
+    isJababiraSquad:Boolean
+    players:[SquadPlayer!]
+    score:Int
+}
+
+type SquadPlayer {
+    id:String!
+    player:Player!
+    position:Position
+    performanceRating:Int!
+}
+
+enum Color {
+    BLACK, WHITE, RED
+}
+enum Nationality {
+    IRAQ, SUDAN, LIBYA, IRAN, PALESTINE, SAUDI_ARABIA
+}
+enum MatchType  {
+    CASUAL, FRIENDLY, LEAGUE
+}
+enum VenueType {
+    INDOOR, OUTDOOR
+}
+type League {
+    id:String!
+    name:String!
+}
+
+type Venue {
+    id:String!
+    name:String!
+    address:String!
+    type:VenueType!
+}

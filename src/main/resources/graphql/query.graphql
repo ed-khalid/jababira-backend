@@ -1,0 +1,15 @@
+
+type Query {
+    players: [Player!]
+    lookups:Lookup!
+}
+
+type Lookup {
+    venues:[Venue!]!
+    colors:[Color!]!
+    positions:[Position!]!
+    nationalities:[Nationality!]!
+    matchTypes:[MatchType]
+}
+
+
