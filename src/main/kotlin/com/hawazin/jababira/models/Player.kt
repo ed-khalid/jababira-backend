@@ -1,11 +1,6 @@
 package com.hawazin.jababira.models
 
-import com.fasterxml.jackson.annotation.JsonValue
-import com.fasterxml.jackson.core.JsonGenerator
-import com.fasterxml.jackson.core.JsonParser
-import com.fasterxml.jackson.databind.*
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
-import com.fasterxml.jackson.databind.node.TextNode
 import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
@@ -24,6 +19,9 @@ class Player (
     var picture:String?,
     @ManyToOne(optional=true)
     var nationality:Nationality?,
+    @ManyToMany
+    @JoinTable(name="group_players")
+    var groups:MutableList<PlayerGroup>,
     @Column(nullable=true)
     var height:Float?,
     @Column(nullable=true)

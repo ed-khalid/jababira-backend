@@ -40,28 +40,83 @@ VALUES
 (
  uuid_generate_v1(),
  'South Run RECenter',
- '7500 Reservation Drive',
+ '7500 Reservation Drive, Springfield, VA',
  (select id from venue_type where value = 'INDOOR')
 );
+INSERT INTO venue(id,name, address, venue_type)
+VALUES
+(
+    uuid_generate_v1(),
+    'Dulles Sportsplex',
+    '21610 Atlantic Blvd, Sterling, VA',
+    (select id from venue_type where value = 'INDOOR')
+);
+INSERT INTO venue(id,name, address, venue_type)
+VALUES
+(
+    uuid_generate_v1(),
+    'NZone',
+    '14550 Lee Rd, Chantilly, VA',
+    (select id from venue_type where value = 'INDOOR')
+);
 
-INSERT INTO player (id, defense, dribble, gk, head, iq, pass, position, nationality_id, shoot, speed, stamina, team , dob, first_name, last_name,picture) VALUES
-( uuid_generate_v1() ,3,2,5,3,3,3, (select id from position where value = 'GK')  , (select id from nationality where value ='IRAQ'),2,2,2,3 ,NULL ,'Yousif','Basrawi'       ,NULL),
-( uuid_generate_v1() ,3,3,3,3,3,3, (select id from position where value = 'GK')  , (select id from nationality where value='IRAQ'),3,1,3,3 ,NULL ,'Hussam','Ibrahim'       ,NULL),
-( uuid_generate_v1(), 4,3,2,2,3,3, (select id from position where value = 'DEF') ,(select id from nationality where value ='IRAQ' ),2,3,2,4 ,NULL ,'Ahmed','Khalid'         ,NULL),
-( uuid_generate_v1(), 5,3,3,4,3,3, (select id from position where value = 'DEF') ,(select id from nationality where value ='IRAQ'),4,3,3,3 ,NULL ,'Sufian','alAni'         ,NULL),
-( uuid_generate_v1(), 5,3,2,3,3,3, (select id from position where value = 'DEF') ,(select id from nationality where value ='IRAQ'),3,3,3,4 ,NULL ,'Abdulwahab','alHeeti'   ,NULL),
-( uuid_generate_v1(), 4,2,2,3,2,3, (select id from position where value = 'DEF') ,(select id from nationality where value ='IRAN'), 2,2,2,3 ,NULL ,'Parham','Tabibi'        ,NULL),
-( uuid_generate_v1(), 3,4,2,2,2,2, (select id from position where value = 'MID') ,(select id from nationality where value ='IRAQ'), 4,5,4,2 ,NULL ,'Ibraheem','alAni'       ,NULL),
-( uuid_generate_v1(), 2,4,3,2,2,2, (select id from position where value = 'MID') ,(select id from nationality where value ='IRAQ'),3,2,2,2 ,NULL ,'Maysara','alJumaily'       ,NULL),
-( uuid_generate_v1(), 4,4,4,3,4,4, (select id from position where value = 'MID') ,(select id from nationality where value ='PALESTINE'),4,4,4,4 ,NULL ,'Osama','Shamout'        ,NULL),
-( uuid_generate_v1(), 2,3,2,2,2,3, (select id from position where value = 'MID') ,(select id from nationality where value ='IRAQ'),4,2,3,3 ,NULL ,'Abdullah','alJaff'      ,NULL),
-( uuid_generate_v1(), 3,4,3,2,4,4, (select id from position where value = 'MID') ,(select id from nationality where value ='SAUDI_ARABIA'),4,4,3,4 ,NULL ,'Aziz','(Nawwaf''s Friend)'      ,NULL),
-( uuid_generate_v1(), 1,2,2,2,3,3, (select id from position where value = 'FW' ) ,(select id from nationality where value ='IRAQ'),3,1,2,3 ,NULL ,'Mustafa','alKenani'     ,NULL),
-( uuid_generate_v1(), 2,4,2,3,3,2, (select id from position where value = 'FW' ) ,(select id from nationality where value ='SAUDI_ARABIA'), 4,4,3,2 ,NULL ,'Nawwaf','alShahrani'    ,NULL),
-( uuid_generate_v1(), 2,2,2,4,4,3, (select id from position where value = 'FW' ) ,(select id from nationality where value ='SUDAN'),4,2,3,4 ,NULL ,'Ismail','Elsahib'       ,NULL)
+INSERT INTO player (first_name, last_name,id, defense, dribble, gk, head, iq, pass, shoot, speed, stamina, team, dob, position,nationality_id, picture) VALUES
+
+(
+ 'Yousif', 'Basrawi',
+ uuid_generate_v1() ,5,5,8,7,5,5,6,5,5,7, NULL,
+ (select id from position where value = 'GK')  ,
+ (select id from nationality where value ='IRAQ'),NULL
+),
+(
+    'Hussam', 'Ibrahim',
+    uuid_generate_v1() ,5,1,5,4,4,4,4,3,4,5, NULL,
+    (select id from position where value = 'GK')  ,
+    (select id from nationality where value ='IRAQ'),NULL
+),
+(
+ 'Ahmed', 'Khalid', uuid_generate_v1(),
+ 7,7,4,4,8,8,4,5,5,8, '09/26/1985',
+ (select id from position where value = 'MF'),
+ (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Hashim', 'Talib', uuid_generate_v1(),
+    8,6,3,6,7,4,6,5,5,8, '01/01/1986',
+    (select id from position where value = 'DF'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Sufian', 'alAni', uuid_generate_v1(),
+    9,7,5,7,7,7,7,7,5,8, '01/01/1984',
+    (select id from position where value = 'DF'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Abdulwahab', 'alHeeti', uuid_generate_v1(),
+    8,6,4,6,7,7,7,6,5,8, '01/01/1980',
+    (select id from position where value = 'DF'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Ibraheem', 'alAni', uuid_generate_v1(),
+    4,8,5,5,4,4,8,8,6,4, '01/01/2000',
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Maysara', 'alJumaily', uuid_generate_v1(),
+    4,8,5,5,4,4,8,8,6,4, '01/01/2000',
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Aziz', 'Saudi', uuid_generate_v1(),
+    4,8,5,5,4,4,8,8,6,4, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'SAUDI ARABIA'), NULL
+)
 ;
-
-
 
 /*
 c0d42c07-1e18-42e8-b343-fe9b06f7fcba,3,2,2,3,2,2,DEF,2,3,3,3,NULL,Rami,Shamout,NULL

@@ -22,7 +22,7 @@ class Match (
     var time:LocalTime,
     @ManyToOne @JoinColumn(name ="venue_id")
     var venue:Venue,
-    @OneToMany(mappedBy = "match", cascade = CascadeType.PERSIST )
+    @OneToMany(mappedBy = "match", cascade =[CascadeType.PERSIST] )
     var squads:MutableList<Squad>,
 )
 
