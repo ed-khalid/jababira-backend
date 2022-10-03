@@ -115,6 +115,66 @@ INSERT INTO player (first_name, last_name,id, defense, dribble, gk, head, iq, pa
     4,8,5,5,4,4,8,8,6,4, NULL,
     (select id from position where value = 'FW'),
     (select id from nationality where value = 'SAUDI ARABIA'), NULL
+),
+(
+    'Fadhl', 'Mubarak', uuid_generate_v1(),
+    5,7,5,5,5,6,7,7,4,7, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Ali', 'Mualla', uuid_generate_v1(),
+    7,7,5,3,7,7,8,7,5,6, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Zaid', 'Akram', uuid_generate_v1(),
+    8,7,4,5,7,7,8,6,6,6, NULL,
+    (select id from position where value = 'DF'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Hussein', 'Alaa', uuid_generate_v1(),
+    7,7,7,6,3,4,6,8,7,2, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Bassam', 'Hamandi', uuid_generate_v1(),
+    3,1,6,4,1,1,1,2,2,5, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Abdullah', 'alTikreeti', uuid_generate_v1(),
+    4,2,4,3,3,3,2,4,5,5, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Aws', 'alTimeemi', uuid_generate_v1(),
+    5,4,5,4,5,5,5,5,5,5, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Muhammed', 'alKawwaz', uuid_generate_v1(),
+    6,9,5,7,9,8,7,7,7,7, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Amara', 'Camara', uuid_generate_v1(),
+    7,9,5,6,6,7,7,9,8,7, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
+),
+(
+    'Filip', 'Ratkovic', uuid_generate_v1(),
+    7,9,5,6,6,7,7,9,8,7, NULL,
+    (select id from position where value = 'FW'),
+    (select id from nationality where value = 'IRAQ'), NULL
 )
 ;
 

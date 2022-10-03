@@ -11,7 +11,7 @@ type Player {
     attributes:PlayerAttributes!
 }
 type PlayerAttributes {
-    position:Position!
+    position:Position
     speed:Int!
     gk:Int
     dribble:Int!
